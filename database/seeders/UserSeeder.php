@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         ]);
         User::create([
             'name'=> 'Client',
-            'role_id'=> 1,
+            'role_id'=> 2,
             'email'=> 'client@company.com',
             'password'=> Hash::make('secret'),
         ]);

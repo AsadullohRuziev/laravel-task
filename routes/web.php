@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-///    return view('welcome');
     return redirect('dashboard');
 })->middleware('auth');
 
@@ -28,5 +27,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+
+Route::resource('applications', \App\Http\Controllers\ApplicationController::class);
+
+
 
 require __DIR__.'/auth.php';

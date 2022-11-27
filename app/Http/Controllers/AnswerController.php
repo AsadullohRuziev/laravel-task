@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Gate;
 
 class AnswerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role:manager');
+    }
+
+
     public function create(Application $application)
     {
         if (! Gate::allows('update-post', auth()->user())){

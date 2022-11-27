@@ -45,16 +45,16 @@ class ApplicationController extends Controller
 
     protected function checkDate()
     {
-        if (auth()->user()->applications()->latest()->first() == null){
-            return false;
-        }
-
-        $last_application = auth()->user()->applications()->latest()->first();
-        $last_app_date = Carbon::parse($last_application->created_at)->format('Y-m-d');
-        $today = Carbon::now()->format('Y-m-d');
-
-        if ($last_app_date == $today){
-            return true;
-        }
+//        if (auth()->user()->applications()->latest()->first() == null){
+//            return false;
+//        }
+//
+//        $last_application = auth()->user()->applications()->latest()->first();
+//        $last_app_date = Carbon::parse($last_application->created_at)->format('Y-m-d');
+//        $today = Carbon::now()->format('Y-m-d');
+//
+//        if ($last_app_date == $today){
+//            return true;
+//        }
     }
 }

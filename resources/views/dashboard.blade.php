@@ -56,6 +56,21 @@
                                         </div>
                                     </div>
                                 </div>
+                                @if($application->answer()->exists())
+                                    <hr/>
+                                    <h3 class="text-xs font-bold mt-2 italic text-indigo-400">Answers:</h3>
+                                    <p>{{$application->answer->body}}</p>
+                                @else
+                                    <div class="flex justify-end">
+                                        <a
+                                            href="{{route('answers.create', ['application'=> $application->id])}}"
+                                            type="button"
+                                            class="border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline"
+                                        >
+                                            Answer
+                                        </a>
+                                    </div>
+                                @endif
                             </div>
                             @endforeach
                             {{$applications->links()}}

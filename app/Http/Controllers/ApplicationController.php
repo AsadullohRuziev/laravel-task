@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreApplicationRequest;
 use App\Jobs\SendEmailJob;
 use App\Mail\ApplicationCreated;
 use App\Models\Application;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Mail;
 
 class ApplicationController extends Controller
 {
-    public function store(Request $request)
+    public function store(StoreApplicationRequest $request)
     {
 
         if ($this->checkDate())
@@ -29,11 +30,6 @@ class ApplicationController extends Controller
         }
 
 
-        $request->validate([
-            'subject'=>'required|max:255',
-            'message'=>'required|max:255',
-            'file'=>'file|mimes:jpg,png,pdf'
-        ]);
 
 
         $application = Application::create([

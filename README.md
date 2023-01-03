@@ -34,3 +34,16 @@ $ npm run dev
 $ php artisan serve
 ```
 
+
+
+```
+Manager
+$  'email' => 'manage@company.com',
+$  'password' => 'secret',
+
+
+Client
+$  'email' => 'client@company.com'
+$   'password' => 'secret'
+```
+
